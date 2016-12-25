@@ -1,9 +1,10 @@
 dist: trusty
 sudo: false
-language: node_js  
-node_js:  
- - "5"
- 
+
+language: node_js
+node_js:
+  - "5"
+
 addons:
   apt:
     sources:
