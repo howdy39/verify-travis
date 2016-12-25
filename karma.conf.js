@@ -4,7 +4,13 @@ module.exports = function (config) {
   config.set({
 
     basePath: '',
-    browsers: ['Chrome'],
+    browsers: [process.env.TRAVIS ? 'Chrome_travis_ci' : 'Chrome'],
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
     frameworks: ['mocha'],
     files: [
       {pattern: 'test/**/*.spec.js', watched: false},
